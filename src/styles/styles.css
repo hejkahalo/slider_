@@ -1,11 +1,112 @@
-.slider {}
-.slider .slider__slides {}
-.slider .slider_slide {}
-.slider .slider__nav
+@font-face {
+    font-family: 'roboto black';
+    src: url('../fonts/roboto-black-webfont.woff2') format('woff2'),
+    url('../fonts/roboto-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
-.slide {}
-.slide .slide__hdl {}
-.slide .slide__text {}
+}
+
+
+
+
+@font-face {
+    font-family: 'roboto thin';
+    src: url('../fonts/roboto-thin-webfont.woff2') format('woff2'),
+    url('../fonts/roboto-thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@keyframes slide-1 {
+    0% { left: 0; }
+    30% { left: 0; }
+    45% { left: -100%; }
+    75% { left: -100%; }
+    90% { left: -200%; }
+    100% { left: -200%; }
+}
+
+@keyframes slide-2 {
+    0% { left: 100%; }
+    30% { left: 100%; }
+    45% { left: 0; }
+    75% { left: 0; }
+    90% { left: -100%; }
+    100% { left: -100%; }
+}
+
+@keyframes slide-3 {
+    0% { left: 200%; }
+    30% { left: 200%; }
+    45% { left: 100%; }
+    75% { left: 100%; }
+    90% { left: 0; }
+    100% { left: 0; }
+}
+
+
+.slider {}
+.slider .slider__slides {
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+}
+.slider .slider_slide {}
+.slider .slider__nav {}
+
+.slide {
+     width: 100%;
+    min-height: 300px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    animation-duration: 14s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    font-family: 'roboto black'
+
+}
+.slide:first-child {
+    background-color: darkgoldenrod;
+    left: 0;
+    animation-name: slide-1;
+    background-image: url("../images/1831.webp");
+
+}
+.slide:nth-child(2) {
+    background-color: lightseagreen;
+    left: 100%;
+    animation-name: slide-2;
+    background-image: url("../images/_102512274_gettyimages-518360318.jpg");
+}
+.slide:last-child {
+    background-color: lavenderblush;
+    left: 200%;
+    animation-name: slide-3;
+    background-image: url("../images/forest-the-sun-morning-tucholskie-158251.jpeg");
+}
+.slide .slide__cover {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100% ;
+}
+.slide .slide__hdl {
+    margin: 0;
+    /*font-weight: 400;*/
+    font-family: "roboto black", sans-serif;
+}
+.slide .slide__text {
+    /*font-weight: 100;*/
+    font-family: "roboto thin", sans-serif;
+}
 .slide .slide__link {}
 
 .nav {}
